@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrados de productos</title>
+
+    <!-- Libreria Axios para peticiones HTTP -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/pixel-rupee.png" type="image/x-icon">    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style_productos.css">
+    <!-- Font  Awesome -->
+    <script src="https://kit.fontawesome.com/08dcd0a587.js" crossorigin="anonymous"></script>
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de navegacion -->
+    <header>
+        <img src="img/pixel-rupee.png" alt="Rupia" class="logo-rupia">
+        <nav>
+            <a href="/index.html" class="seccion">Inicio</a>
+            <a href="/admin.html" class="seccion">Productos</a>
+        </nav>
+    </header>
+    
+    <main class="main-container">
+        <h1 class="titulo">Administración de productos</h1>
+        
+        <!-- Formulario -->
+        <div class="formulario-container">
+            <form class="form-producto" id="producto-form">
+                <label for="nombre"> Nombre del producto</label>
+                <input type="text" name="nombre" placeholder="Espada de piedra" required>
+                <label for="imagen"> URL de la imagen</label>
+                <input type="url" name="imagen" placeholder="https://minecraft.wiki/images/Stone_Sword_JE2_BE2.png?d003e&format=original" required>
+                <label for="precio">Precio</label>
+                <input type="number" name="precio" placeholder="10" min="0" step="0.01" required>
+                <label for="nivel">Nivel requerido</label>
+                <input type="number" name="nivel" placeholder="3" min="1" required>
+                <label for="tipo">Categoria</label>
+                <input type="text" name="tipo" placeholder="Espada liviana" required>
+                <label for="stock">Stock</label>
+                <input type="number" name="stock" placeholder="13" min="0" required>
+                <button type="submit">Agregar producto</button>
+            </form>
+            
+            <!-- Container de la Tabla -->
+            <div class="tabla-container" id="tabla-container">
+                
+                <!-- Busqueda de productos -->
+                <div class="product-search">
+                    <label for="product-search" class="from-label">Buscar Producto:</label>
+                    <input type="text" class="search-input" id="product-search" onkeyup="inputSearch(event)">
+                </div>
+
+                <!-- Botones de ordenamiento -->
+                <div class="sort-btn-container">
+                    <button onclick="sortDesc()" title="Ordenar de forma descendente" class="sort-btn">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+
+                    <button onclick="sortAsc()" title="Ordenar de forma ascendente" class="sort-btn">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                </div>
+
+                <!-- Tabla -->
+                <table class="tabla-productos">
+                    <thead>
+                        <tr>
+                            <td>Imagen</td>
+                            <td>Nombre</td>
+                            <td>Precio</td>
+                            <td>Nivel requerido</td>
+                            <td>Tipo</td>
+                            <td>Stock</td>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Aca se van a ir agregando los productos -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Script -->
+    <script src="js/nuevo.js"></script>
+</body>
+</html>

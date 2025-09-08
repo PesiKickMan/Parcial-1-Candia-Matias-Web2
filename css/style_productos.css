@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    background-color: #494b4b;
+}
+
+/*Estilo del header y nav bar*/
+
+header{
+    background-color: #0d9263;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    height: 70px;
+}
+
+.logo-rupia {
+    position: absolute;
+    left: 30px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; 
+    object-fit: contain;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+.seccion {
+    position: relative;
+    color: #d4ce46;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.seccion::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00ff99, #4aba91);
+    transition: width 0.3s;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.seccion:hover {
+    color: #d0ff00;
+}
+
+.seccion:hover::after {
+    width: 100%;
+}
+
+
+/*Estilo de la tabla*/
+
+.main-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.tabla-productos {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0d9263;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+.tabla-productos td {
+    padding: 14px 10px;
+    text-align: center;
+    font-size: 0.95rem;
+    background: #0d9263;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.tabla-productos img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: rgba(20, 20, 20, 0.25);
+    box-shadow: 0 1px 4px #0001;
+}
+
+.tabla-container {
+    flex: 2;
+    min-width: 340px;
+}
+
+.btn-eliminar {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.btn-eliminar:hover {
+    background: #c0392b;
+    transform: scale(1.15);
+}
+
+/*Estilo barra de busqueda*/
+
+.product-search {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding: 10px 16px;
+    font-size: 1.1rem;
+}
+
+.search-input {
+    border: 1.5px solid;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+}
+
+/*Estilo de las flechas de ordenamiento*/
+
+.sort-btn-container {
+    gap: 12px;
+    margin-bottom: 18px;
+    padding: 10px 16px;
+    font-size: 1.1rem;
+}
+
+.sort-btn {
+    background: #0d9263;
+    color: #d4ce46;
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px #0002;
+}
+
+.sort-btn:hover {
+    background: #d4ce46;
+    color: #0d9263;
+}
+
+
+/*Estilo formulario*/
+
+.formulario-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.form-producto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #f8f8f8;
+    padding: 24px 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    min-width: 260px;
+    max-width: 320px;
+}
+
+.form-producto input,
+.form-producto button {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 0.78rem;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #bdbdbd;
+    outline: none;
+}
+
+.form-producto button {
+    background: #0d9263;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.form-producto button:hover {
+    background: #d4ce46;
+    color: #0d9263;
+}
+
+
+/*Responsive Design*/
+
+@media (max-width: 900px) {
+    .formulario-container {
+        flex-direction: column;
+        gap: 24px;
+        align-items: stretch;
+        padding: 0 10px;
+    }
+    .tabla-container {
+        min-width: 0;
+        width: 100%;
+    }
+    .form-producto {
+        max-width: 100%;
+        min-width: 0;
+        margin-bottom: 24px;
+    }
+    .tabla-productos {
+        font-size: 0.85rem;
+        width: 100%;
+        min-width: 0;
+    }
+    .tabla-productos td {
+        padding: 6px 4px;
+        font-size: 0.85rem;
+    }
+    .tabla-productos img {
+        width: 36px;
+        height: 36px;
+    }
+    .btn-eliminar, .sort-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .tabla-productos {
+        font-size: 0.75rem;
+    }
+    .tabla-productos td {
+        padding: 3px 2px;
+        font-size: 0.75rem;
+    }
+    .tabla-productos img {
+        width: 24px;
+        height: 24px;
+    }
+    .btn-eliminar, .sort-btn {
+        width: 22px;
+        height: 22px;
+        font-size: 0.9rem;
+    }
+}

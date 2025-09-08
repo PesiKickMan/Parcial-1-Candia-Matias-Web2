@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La tienda de Morshu</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/pixel-rupee.png" type="image/x-icon">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font  Awesome-->
+    <script src="https://kit.fontawesome.com/08dcd0a587.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de navegacion -->
+    <header>
+        <img src="img/pixel-rupee.png" alt="Rupia" class="logo-rupia">
+        <nav>
+            <a href="/index.html" class="seccion">Inicio</a>
+            <a href="/admin.html" class="seccion">Productos</a>
+        </nav>
+        <i class="fa-solid fa-cart-shopping icono-carrito"></i>
+    </header>
+
+    <!-- Sobre nosotros e imagen -->
+    <main class="main-container">
+        <div class="Sobre-nosotros">
+            <h1 class="titulo">Sobre nosotros</h1>
+            <p class="parrafo">¿Cansado de que tu espada se rompa justo antes de darle el último golpe a un limo? ¿Harto de nunca tener cuerda cuando quieres escapar de una mazmorra? ¿Las pociones que llevas en tu inventario no te curan lo suficiente?
+            ¡No busques más! En la tienda de Morshu encontrarás todo lo que necesitas para tus aventuras: espadas resistentes, cuerdas de la mejor calidad y pociones que realmente funcionan. Nuestro objetivo es equiparte para que ningún desafío te detenga. ¡Visítanos y prepárate para conquistar cualquier mazmorra!
+            </p>
+        </div>
+
+        <div>
+            <img src="img/morshu-gif.webp" alt="gif de Morshu" class="img-morshu">
+        </div>
+    </main>
+
+    <!-- Carrusel de productos -->
+    <div class="carrusel-section">
+        <h1 class="titulo">Nuestros productos</h1>
+        <div class="carrusel-container">
+            <button class="carrusel-btn prev" id="btn-prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="carrusel">
+                <img src="img/Espada-Maestra.png" alt="Espada maestra" class="carrusel-img activa" id="carrusel-img">
+                <img src="img/bomb.png" alt="Bomba" class="carrusel-img" id="carrusel-img">
+                <img src="img/FairyBottle.webp" alt="Hada embottellada" class="carrusel-img" id="carrusel-img">
+                <img src="img/Cloud-espada.png" alt="Espada Buster" class="carrusel-img" id="carrusel-img">
+                <img src="img/Caparazon-azul.png" alt="Caparazon azul" class="carrusel-img" id="carrusel-img">
+            </div>
+            <button class="carrusel-btn sig" id="btn-sig"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div>
+        <a href="https://www.instagram.com/nintendoamerica/" target="_blank" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+
+    <audio src="/sound/shop_musica.mp3" autoplay loop>
+        <p>Si ves esto tu navegador no soporta audio</p>
+    </audio>
+
+    <!-- Script -->
+    <script src="js/carrusel.js"></script>
+</body>
+</html>

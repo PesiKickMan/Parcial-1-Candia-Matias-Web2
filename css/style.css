@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    background-color: #494b4b;
+}
+
+/*Estilo del header y nav bar*/
+
+header{
+    background-color: #0d9263;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    height: 70px;
+}
+
+.logo-rupia {
+    position: absolute;
+    left: 30px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; 
+    object-fit: contain;
+}
+
+.icono-carrito {
+    position: absolute;
+    right: 30px; 
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #d4ce46;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.icono-carrito:hover  {
+    transform: translateY(-50%) scale(1.2) rotate(-10deg);
+    color: #d0ff00;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+.seccion {
+    position: relative;
+    color: #d4ce46;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.seccion::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00ff99, #4aba91);
+    transition: width 0.3s;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.seccion:hover {
+    color: #d0ff00;
+}
+
+.seccion:hover::after {
+    width: 100%;
+}
+
+/*Estilo del main container*/
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: rgba(20, 20, 20, 0.25);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+.Sobre-nosotros {
+    flex: 1;
+    min-width: 280px;
+}
+
+.titulo {
+    color: #d4ce46;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    /*text-shadow: 2px 2px 0 #0d9263, 0 0 8px #00ff99;*/
+    letter-spacing: 2px;
+}
+
+.parrafo {
+    color: #fff;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    padding: 22px 26px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+/*Estilo imagen flotante*/
+
+.instagram{
+    font-size: 40px;
+    position: fixed;
+    z-index: 1;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #fd5, #fca, #f56, #a1c4fd, #c2e9fb);
+    color: #fff;
+    border-radius: 50%;
+    padding: 16px;
+    box-shadow: 0 4px 24px #0d9263aa, 0 0 0 4px #d4ce46;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.instagram:hover {
+    transform: scale(1.15);
+}
+
+/*Estilo del carrusel*/
+
+.carrusel-section .titulo {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.carrusel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 40px auto 0 auto;
+    max-width: 400px;
+    background: rgba(20, 20, 20, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    padding: 16px 0;
+    position: relative;
+}
+
+.carrusel {
+    width: 220px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.carrusel-img {
+    display: none;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px #0d9263aa;
+    background: #4aba91;
+    position: absolute;
+    left: 0; top: 0;
+    transition: opacity 0.4s;
+    opacity: 0;
+}
+
+.carrusel-img.activa {
+    display: block;
+    opacity: 1;
+    z-index: 1;
+}
+
+.carrusel-btn {
+    background: #0d9263;
+    color: #d4ce46;
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px #0002;
+}
+
+.carrusel-btn:hover {
+    background: #d4ce46;
+    color: #0d9263;
+}
+
+/* Responsive Design */
+
+/* Tablets (≤ 900px) */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+        gap: 24px;
+        padding: 30px 10px;
+        max-width: 98vw;
+    }
+
+    .logo-rupia, .icono-carrito{
+        display: none;
+    }
+}
+
+
+
+
