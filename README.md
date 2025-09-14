@@ -41,6 +41,8 @@ Este proyecto es una interfaz administrativa para gestionar productos (crear, le
     - Recomendado: abrir con Live Server (VSCode).
 4. Asegúrate de que las dependencias (axios, sweetalert, fontawesome) estén incluidas en el HTML.
 
+---
+
 ## Autor
 **Matías Candia**
 
