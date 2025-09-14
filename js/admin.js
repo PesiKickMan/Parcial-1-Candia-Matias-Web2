@@ -110,6 +110,7 @@ productoFormHTML.addEventListener('submit', (event) => {
             .then(response => {
                 if (response.status === 201) {
                     swal("El producto fue añadido con éxito", "Presiona el botón para continuar", "success");
+                    productoFormHTML.reset();
                     renderProducto();
                 } else {
                     swal("Error al añadir producto", 'Código: ' +  response.status, "error");
