@@ -12,8 +12,9 @@ let idProductoEditado = null;
 function renderProducto() {
     axios.get(`${baseURL}/productos`)
         .then(response => {
-            const productos = response.data;
-            tableBodyHTML.innerHTML = '';
+            const productos = response.data; //Creo un array con los productos para poder recorrerlos mas fácilmente.
+            tableBodyHTML.innerHTML = ''; //Limpio el tbody para evitar duplicados
+            //Recorro el array de productos y los agrego a la tabla
             productos.forEach(producto => {
                 tableBodyHTML.innerHTML += `
                     <tr>
@@ -45,7 +46,7 @@ function renderProducto() {
 renderProducto();
 
 
-//Mostrar formulario de edición con los datos del producto
+//Mostrar formulario de edición con los datos del producto (Este reemplaza los datos del formulario original)
 function mostrarFormularioEdicion(idProducto) {
     axios.get(`${baseURL}/productos/${idProducto}`)
         .then(response => {
@@ -72,7 +73,8 @@ productoFormHTML.addEventListener('submit', (event) => {
 
     const el = event.target.elements;
 
-    const nuevoProducto = {
+    //Creo un objeto con los datos del formulario
+    const nuevoProducto = { 
         nombre: el.nombre.value,
         precio: el.precio.value,
         nivel: el.nivel.value,
@@ -81,7 +83,7 @@ productoFormHTML.addEventListener('submit', (event) => {
         imagen: el.imagen.value
     };
 
-    if (idProductoEditado) {
+    if (idProductoEditado) { //Si idProductoEditado tiene un valor, estoy editando
     // Modo edición
     axios.put(`${baseURL}/productos/${idProductoEditado}`, nuevoProducto)
         .then(response => {
@@ -99,7 +101,7 @@ productoFormHTML.addEventListener('submit', (event) => {
             if (error.response) {
                 swal("Error al editar el producto", 'Código: ' +  response.status, "error");
             } else {
-                    swal("Error de red o al conectar al servidor", ":(", "error");
+                swal("Error de red o al conectar al servidor", ":(", "error");
             }
         });
     } else {
@@ -145,6 +147,7 @@ function eliminarProductoAux(idProducto) {
         })
 }
 
+//Función para mostrar alerta de confirmación antes de eliminar un producto
 function eliminarProducto(idProducto){
     swal({
     title: "¿Estas seguro?",
@@ -198,7 +201,8 @@ function sortDesc(){
         })
 }
 
-//Funcion auxiliar para renderizar los productos ordenados
+//Funcion auxiliar para renderizar los productos ordenados, buscados, etc. 
+//Esta función es necesaria porque renderProducto() obtiene los productos desde la API.
 function renderSorted(productos) {
     tableBodyHTML.innerHTML = '';
     productos.forEach(producto => {
